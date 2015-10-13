@@ -77,8 +77,8 @@ module LinkedIn
         path = "#{group_path(options)}/posts"
         simple_query(path, options)
       end
-      def like_post(id)
-        path = "/v1/posts/#{id}/relation-to-viewer/is-liked"
+      def like_group_post(id)
+        path = "/posts/#{id}/relation-to-viewer/is-liked"
         put(path, 'true', "Content-Type" => "application/json")
       end
 
