@@ -77,6 +77,10 @@ module LinkedIn
         path = "#{group_path(options)}/posts"
         simple_query(path, options)
       end
+      def like_post(id)
+        path = "/v1/posts/#{id}/relation-to-viewer/is-liked"
+        put(path, 'true', "Content-Type" => "application/json")
+      end
 
       # @deprecated Use {#add_group_share} instead
       def post_group_discussion(group_id, discussion)
